@@ -39,6 +39,7 @@ i {
 
 
 .poster {
+    margin-top: 26px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -47,6 +48,28 @@ i {
     border: 8px solid var(--primaryColor);
     box-shadow: 8px 8px 16px #999999, -8px -8px 18px #ffffff;
 }
+
+
+
+
+/* rotate image  */
+
+.rotate {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 
 
 h5 {
@@ -180,6 +203,28 @@ h1 {
     font-size: 18px;
 }
 
+
+.List-button {
+    color: #090909;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.List-button:active {
+    background-color: red;
+    
+    transform: scale(1.1);
+}
+
+.List-button #playIcon {
+    padding: 6px;
+    font-size: 18px;
+}
+
+
 #song-discripation {
     font-size: 16px;
     color: var(--textColor);
@@ -221,8 +266,8 @@ h1 {
 @media (max-width: 576px) {
 
     .poster {
-        width: 240px;
-        height: 240px;
+        width: 200px;
+        height: 200px;
     }
 
     .bttn {
@@ -237,6 +282,7 @@ h1 {
 
 
     #progress {
+        margin-bottom: 44px;
         width: 80%;
         height: 5px;
     }
@@ -245,6 +291,12 @@ h1 {
         height: 24px;
         width: 24px;
     }
+
+    #all-songs {
+        margin-bottom: 30px;
+
+    }
+
 
 
 
@@ -335,7 +387,6 @@ h1 {
         font-size: 14px;
         color: var(--textColor);
     }
-
 
 }
 

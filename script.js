@@ -32,10 +32,10 @@ function mainfunction() {
     clutter += `
     <div class="d-flex align-items-center justify-content-center  hoverList">
     <div class="song-list" id=${index}>
-      <img class="img-fluid img-thumbnail w-25 m-2  "  src=${elem.img} alt="" srcset="">
+      <img class="img-fluid img-thumbnail w-25 m-2"  src=${elem.img} alt="" srcset="">
       <h2 class="song-name">${elem.songName}</h2>
       </div>
-      <h3 class="icon ">
+      <h3 class="List-button">
         <i id="playIcon" class="ri-play-fill"></i>
       </h3>
       </div>
@@ -84,6 +84,7 @@ play.addEventListener("click", function () {
     mainfunction()
     flag = 1
     audio.play()
+    rotatePoster(); // Start rotating the poster image
 
   } else {
 
@@ -93,13 +94,10 @@ play.addEventListener("click", function () {
     mainfunction()
     audio.pause()
     flag = 0
+    stopRotatePoster(); // Stop rotating the poster image
   }
 
 })
-
-
-
-
 
 
 
@@ -165,3 +163,23 @@ songProgress.onchange = function () {
   play.style.backgroundColor = " #7491F5"
 
 }
+
+
+
+function rotatePoster() {
+  poster.classList.add("rotate");
+  // posterTwo.classList.add("rotate");
+  audio.addEventListener('play', rotatePoster);
+
+}
+
+
+function stopRotatePoster() {
+  poster.classList.remove("rotate");
+  // posterTwo.classList.remove("rotate");
+
+  audio.addEventListener('pause', stopRotatePoster);
+}
+
+
+
