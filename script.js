@@ -21,10 +21,6 @@ const forward = document.querySelector("#forward")
 const audio = new Audio()
 
 
-
-
-
-
 let selectedSong = 0;
 
 
@@ -45,20 +41,6 @@ function mainfunction() {
       </div>
 
     `
-
-
-
-
-    // <div class="song-list" id=${index}>
-    // <img class="img-fluid rounded-3 img-thumbnail w-25 h-25 p-1" src=${elem.img} alt="" srcset="">
-    // <h2 class="song-name ">${elem.songName}</h2>
-    // <h3 class="icon">
-    //   <i id="playIcon" class="ri-play-fill"></i>
-    // </h3>
-    // </div>
-
-
-
   })
 
 
@@ -69,17 +51,12 @@ function mainfunction() {
   poster.style.backgroundImage = `url(${arry[selectedSong].img})`
   posterTwo.style.backgroundImage = `url(${arry[selectedSong].img})`
 
-
   songTitle.innerText = arry[selectedSong].songName;
   songDecripation.innerHTML = arry[selectedSong].singerName;
-
 
 }
 
 mainfunction()
-
-
-
 
 allSongs.addEventListener("click", function (dets) {
   selectedSong = dets.target.id
@@ -97,7 +74,6 @@ allSongs.addEventListener("click", function (dets) {
 })
 
 
-
 var flag = 0
 
 play.addEventListener("click", function () {
@@ -105,7 +81,6 @@ play.addEventListener("click", function () {
     play.style.boxShadow = "inset 0.5px 0.5px  6px  #3d3d3d"
     play.style.backgroundColor = " #7491F5"
     play.innerHTML = `<i class="ri-pause-mini-line"></i>`
-
     mainfunction()
     flag = 1
     audio.play()
@@ -115,14 +90,11 @@ play.addEventListener("click", function () {
     play.style.boxShadow = "8px 8px 16px #999999, -8px -8px 18px #ffffff"
     play.style.backgroundColor = " #DCE5F3"
     play.innerHTML = `<i class="ri-play-fill"></i>`
-
-
-
     mainfunction()
     audio.pause()
     flag = 0
-
   }
+
 })
 
 
@@ -166,9 +138,8 @@ backward.addEventListener("click", function () {
   } else {
     backward.style.opacity = "0.4";
   }
+
 });
-
-
 
 
 //progressbar 
@@ -178,8 +149,6 @@ audio.onloadedmetadata = function () {
   songProgress.value = audio.currentTime;
 }
 
-
-
 if (audio.play()) {
   setInterval(() => {
     songProgress.value = audio.currentTime;
@@ -187,7 +156,6 @@ if (audio.play()) {
   }, 500);
 
 }
-
 
 songProgress.onchange = function () {
   audio.play();
@@ -197,4 +165,3 @@ songProgress.onchange = function () {
   play.style.backgroundColor = " #7491F5"
 
 }
-
